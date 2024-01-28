@@ -10,7 +10,7 @@ public class AudioDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MicrToAudioClip();
+        MicToAudioClip();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class AudioDetection : MonoBehaviour
         
     }
 
-    public void MicrToAudioClip(){
+    public void MicToAudioClip(){
         string micName = Microphone.devices[0];
         micClip = Microphone.Start(micName, true, 20, AudioSettings.outputSampleRate);
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -24,5 +25,16 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(damage);
         }
         Destroy(gameObject); // Destroy the bullet immediately upon hitting something
+    }
+
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.CompareTag("Enemy")){
+            Enemy enemy = col.gameObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
     }
 }
