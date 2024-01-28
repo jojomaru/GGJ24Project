@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    public int playerhealth = 3; // Non-static variable
-
-    public Image[] hearts;
+    public static int playerhealth = 3;
+    public GameObject[] hearts; // Change to GameObject array instead of Image array
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
@@ -18,12 +17,12 @@ public class HealthManager : MonoBehaviour
         {
             if (i < playerhealth)
             {
-                hearts[i].sprite = fullHeart;
-                hearts[i].enabled = true;
+                hearts[i].GetComponent<Image>().sprite = fullHeart; // Set sprite to full heart
+                hearts[i].SetActive(true); // Enable heart GameObject
             }
             else
             {
-                hearts[i].enabled = false;
+                hearts[i].SetActive(false); // Disable heart GameObject
             }
         }
     }
