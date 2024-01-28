@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 2147241868}
   - component: {fileID: 2147241867}
   - component: {fileID: 2147241866}
+  - component: {fileID: 2147241870}
   - component: {fileID: 2147241869}
   m_Layer: 0
   m_Name: SquareMic
@@ -700,6 +701,20 @@ MonoBehaviour:
   detector: {fileID: 898769559}
   loudnessSensibility: 100
   threshold: 0.1
+--- !u!114 &2147241870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147241863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32312712814b92d4b826d02db82a126d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 2147241868}
+  bulletPrefab: {fileID: 2988960093406887616, guid: 38c81f903ac85d940ad190053b41e0f1, type: 3}
 --- !u!1001 &5954601596562067248
 PrefabInstance:
   m_ObjectHideFlags: 0

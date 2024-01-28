@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScaleFromMic : MonoBehaviour
 {
+    public Weapon weapon;
     public AudioSource audioSrc;
     public Vector2 minScale;
     public Vector2 maxScale;
@@ -15,7 +16,7 @@ public class ScaleFromMic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        weapon = this.gameObject.GetComponent<Weapon>();
     }
 
     // Update is called once per frame
@@ -23,8 +24,12 @@ public class ScaleFromMic : MonoBehaviour
     {
         float loudness = detector.GetLoudnessfromMic() * loudnessSensibility;
 
-        if(loudness < threshold) loudness = 0;
-        Debug.Log("IT FUCKING WORKS!!");
+        if(loudness < threshold) {
+            loudness = 0;
+        }else{
+            weapon.Shoot();
+        }
+        
         //lerp value from min to maxscale
         transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
     }
