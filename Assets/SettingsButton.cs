@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonSlideInAnimation : MonoBehaviour
+public class SettingsButton : MonoBehaviour
 {
     public Transform obj;
     bool playAnimation = false;
@@ -11,9 +11,8 @@ public class ButtonSlideInAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        endYPosition = obj.transform.position.y + 200;
         StartCoroutine(SleepTimer());
-
+        endYPosition = obj.transform.position.y - 90;
     }
 
     IEnumerator SleepTimer()
@@ -28,8 +27,8 @@ public class ButtonSlideInAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playAnimation == false || obj.transform.position.y >= endYPosition)return;
-        Vector3 tempVect = new Vector3(0, 3, 0);
+        if(playAnimation == false || obj.transform.position.y <= endYPosition)return;
+        Vector3 tempVect = new Vector3(0, -1, 0);
 
         obj.transform.position += tempVect;
     }

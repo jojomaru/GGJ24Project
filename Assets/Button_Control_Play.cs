@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Button_Control : MonoBehaviour
+public class Button_Control_Play : MonoBehaviour
 {
     [SerializeField] private string startGame = "Main";
 
