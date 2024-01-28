@@ -10,6 +10,10 @@ public class HealthManager : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    void Start(){
+        playerhealth = 3;
+    }
+
     // Update is called once per frame
     void Update()
     {

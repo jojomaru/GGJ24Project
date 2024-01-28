@@ -695,6 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528081c544daa5947bcc56c37b78777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
   audioSrc: {fileID: 0}
   minScale: {x: 1, y: 1}
   maxScale: {x: 5, y: 5}

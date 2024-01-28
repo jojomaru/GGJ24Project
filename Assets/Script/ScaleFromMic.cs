@@ -31,6 +31,6 @@ public class ScaleFromMic : MonoBehaviour
         }
         
         //lerp value from min to maxscale
-        transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
+        //transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
     }
 }
