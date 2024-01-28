@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 1;
+    public int enemyhealth = 1;
 
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        enemyhealth -= damage;
 
-        if (health <= 0)
+        if (enemyhealth <= 0)
         {
             Die();
         } 
@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        ScoreScript.scoreValue += 1;
         Destroy(gameObject);
     }
 }
