@@ -5,13 +5,14 @@ using UnityEngine;
 public class ButtonSlideInAnimation : MonoBehaviour
 {
     public Transform obj;
+    public int maxHeightOffset = 250;
     bool playAnimation = false;
     float endYPosition = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        endYPosition = obj.transform.position.y + 200;
+        endYPosition = (Screen.height / 2) + obj.transform.position.y;
         StartCoroutine(SleepTimer());
 
     }
@@ -29,7 +30,10 @@ public class ButtonSlideInAnimation : MonoBehaviour
     void Update()
     {
         if(playAnimation == false || obj.transform.position.y >= endYPosition)return;
-        Vector3 tempVect = new Vector3(0, 3, 0);
+
+        float moveLength = 500 * Time.deltaTime;
+
+        Vector3 tempVect = new Vector3(0, moveLength, 0);
 
         obj.transform.position += tempVect;
     }

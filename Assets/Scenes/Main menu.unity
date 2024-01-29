@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 58522008}
+  maxHeightOffset: 250
 --- !u!1 &67024381
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 602, y: 406}
+  m_AnchoredPosition: {x: 524, y: 406}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &376392278
@@ -656,6 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 376392277}
+  minHeightOffset: 150
 --- !u!1 &483553134
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 483553135}
+  maxHeightOffset: 250
 --- !u!1 &1019099521
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1019099522}
+  maxHeightOffset: 250
 --- !u!114 &1019099524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1687,6 +1691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1806431274}
+  maxHeightOffset: 250
 --- !u!1001 &1919045438
 PrefabInstance:
   m_ObjectHideFlags: 0

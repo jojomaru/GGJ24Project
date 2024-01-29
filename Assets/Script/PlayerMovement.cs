@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public Joystick joystick;
     public Transform obj;
+    // public int boundriesOffset = 20;
+    // private Vector2 screenBounds;
+    // private float objectHeight;
     float maxHeight = 0;
     float minHeight = 0;
     float verticalMove = 0f;
@@ -13,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        // screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        // objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
         maxHeight = Screen.height / 100;
         minHeight = Screen.height / (-100);
         // Debug.Log("Max Height: " + maxHeight);
@@ -23,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Vector3 viewPos = transform.position;
+        // viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y + objectHeight, screenBounds.y * -1 - objectHeight);
+        // viewPos.x = viewPos.x;
         verticalMove = joystick.Vertical * accelleration;
         float playerYPosition = obj.transform.position.y;
 
@@ -39,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         tempVect = tempVect.normalized * accelleration * Time.deltaTime;
 
-        obj.transform.position += tempVect;
+        transform.position += tempVect;
 
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SettingsButton : MonoBehaviour
 {
     public Transform obj;
+    public int minHeightOffset = 150;
     bool playAnimation = false;
     float endYPosition = 0;
 
@@ -12,7 +13,8 @@ public class SettingsButton : MonoBehaviour
     void Start()
     {
         StartCoroutine(SleepTimer());
-        endYPosition = obj.transform.position.y - 90;
+        endYPosition = obj.transform.position.y - (Screen.height / 3);
+
     }
 
     IEnumerator SleepTimer()
@@ -28,7 +30,10 @@ public class SettingsButton : MonoBehaviour
     void Update()
     {
         if(playAnimation == false || obj.transform.position.y <= endYPosition)return;
-        Vector3 tempVect = new Vector3(0, -1, 0);
+
+        float moveLength = -300 * Time.deltaTime;
+
+        Vector3 tempVect = new Vector3(0, moveLength, 0);
 
         obj.transform.position += tempVect;
     }

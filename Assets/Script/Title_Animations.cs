@@ -5,13 +5,14 @@ using UnityEngine;
 public class Title_Animations : MonoBehaviour
 {
     public Transform obj;
+    public int maxHeightOffset = 250;
     float maxHeight = 0;
     bool playAnimation = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHeight = Screen.height / 1.2f;
+        maxHeight = Screen.height / 1.25f;
         StartCoroutine(SleepTimer());
     }
 
@@ -30,7 +31,10 @@ public class Title_Animations : MonoBehaviour
         // Debug.Log("Object location: " + obj.transform.position.y);
         // Debug.Log("Max height: " + maxHeight);
         if(playAnimation == false || obj.transform.position.y >= maxHeight)return;
-        Vector3 tempVect = new Vector3(0, 2, 0);
+
+        float moveLength = 300 * Time.deltaTime;
+
+        Vector3 tempVect = new Vector3(0, moveLength, 0);
 
         obj.transform.position += tempVect;
     }
