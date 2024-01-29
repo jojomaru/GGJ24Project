@@ -1120,9 +1120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hearts:
   - {fileID: 343340897}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 21300000, guid: 5d92314f2801de648923c5c463058116, type: 3}
+  - {fileID: 221678170}
+  - {fileID: 1024718945}
+  fullHeart: {fileID: 375120583, guid: 5d92314f2801de648923c5c463058116, type: 3}
   emptyHeart: {fileID: 0}
 --- !u!114 &1018460503
 MonoBehaviour:

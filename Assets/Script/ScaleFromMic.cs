@@ -28,6 +28,12 @@ public class ScaleFromMic : MonoBehaviour
             loudness = 0;
         }else{
             weapon.Shoot();
+            //fetch all mic device name list
+            /*
+            foreach (var device in Microphone.devices)
+            {
+                Debug.Log("Name: " + device);
+            }*/
         }
         
         //lerp value from min to maxscale

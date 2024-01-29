@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class AudioDetection : MonoBehaviour
 {
@@ -10,13 +11,25 @@ public class AudioDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RequestMicrophonePermission();
+        StartCoroutine(WaitForMicrophonePermission());
+
         MicToAudioClip();
     }
 
-    // Update is called once per frame
-    void Update()
+    void RequestMicrophonePermission()
     {
-        
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            Permission.RequestUserPermission(Permission.Microphone);
+        }
+    }
+
+    IEnumerator WaitForMicrophonePermission(){
+        while (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            yield return null;
+        }
     }
 
     public void MicToAudioClip(){
